@@ -58,5 +58,5 @@
 
 1. [demo.ui](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/demo.ui): the GUI of this polyp diagnosis platform, can be accessed via qt Designer.
 
-2. [environment.yaml](detection_platform/environment.yaml): used for set up the environment on a new computer, for detailed information, please refer to the [readme file](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main) in the homepage.
+2. [environment.yaml](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/environment.yaml): used for set up the environment on a new computer, for detailed information, please refer to the [readme file](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main) in the homepage.
 
