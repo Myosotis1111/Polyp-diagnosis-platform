@@ -38,27 +38,25 @@
 
 - # Python files
 
-1. [main.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/main.py): the main program, entrance of the detection platform.
+1. [main.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/main.py): the main program, entrance of the detection platform.
 
-1. [evaluation.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/evaluation.py): entrance of the evaluation module. This program is designed for evaluating the performance of model on a certain dataset.
+2. [batch_evaluation.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/batch_evaluation.py): Based on the outputs of the batch processing (the excel report and segmented masks), the classifier and segmentation model can be evaluated by running this script.
 
-1. [detection_model_load](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/detection_model_load.py).py: for loading the yolov5 algorithm for the detection platform.
+3. [loadClassifier.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/loadClassifier.py)/[loadSegModel.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/loadSegModel.py): for loading classifier (including scaler and selector) and segmentation model.
 
-1. [model.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/model.py): the logic module of the MVC model, in charge of all calculation, detection and logic determination. The methods can be reused in evaluation.py.
+4. [model.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/model.py): the logic module of the MVC model, in charge of all calculation, detection and logic determination. The methods can be reused in evaluation.py.
 
-1. [view.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/view.py): the GUI and controller module of the MVC model, in charge of action listening and GUI updating.
+5. [view.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/view.py): the GUI and controller module of the MVC model, in charge of action listening and GUI updating.
 
-1. [signal.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/signal.py): the signals emitted by model.py to tell view module to update GUI are defined here.
+6. [signal.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/signal.py): the signals emitted by model.py to tell view module to update GUI are defined here.
 
-1. [window.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/window.py): the Window class is defined here, with attributes and getter, setter methods.
+7. [polyp.py](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/polyp.py): the Polyp class is defined here, with attributes and getter, setter methods.
 
-1. [setup.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/setup.py): transform the python project into an executable software (if needed).
+8. [feature_extraction](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/feature_extraction.py): the logic for extracting features from the polyp images after segmentation, and setting the attribute values of current polyp instance.
 
 - # Other files
 
-1. [Detection Platform.ui](detection_platform/Detection Platform.ui): the GUI of this detection platform, can be accessed via qt Designer.
+1. [demo.ui](https://github.com/Myosotis1111/Polyp-diagnosis-platform/blob/main/Diagnosis_Platform/demo.ui): the GUI of this polyp diagnosis platform, can be accessed via qt Designer.
 
-1. [environment.yaml](detection_platform/environment.yaml): used for set up the environment on a new computer, for detailed information, please refer to the [readme file](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision#python-project) in the homepage.
-
-1. [logo.ico](detection_platform/logo.ico): logo of THL, used as the icon for this project.
+2. [environment.yaml](detection_platform/environment.yaml): used for set up the environment on a new computer, for detailed information, please refer to the [readme file](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main) in the homepage.
 
