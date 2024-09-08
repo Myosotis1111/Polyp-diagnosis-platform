@@ -2,15 +2,17 @@
 
 - # Usecase 1: Analysis of single polyp image
 
-1. After the project is successfully imported and the environment is established (see [instructions](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main) **and run main.py**.
+1. After the project is successfully imported and the environment is established (see [instructions](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main)) **and run main.py**.
 
-1. upload images by **clicking "Upload Images"** button with corresponding window location text files. Sample images can be found in [testset](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/testset). Up to three images can be uploaded at a time.
+2. upload images by **clicking "Upload Images"** button with corresponding window location text files. Sample images can be found in [demo_io](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/demo_io/demoImg). After successfully uploaded, the polyp image will be shown in the current tab widget.
 
-1. **Clicking "Detect" button** to start the detection process.
+3. **Clicking "Segment" button** to start the segmentation process. After the segmentation process completed, the current tab widget shows the masked image. 
 
-1. After the detection process completed, **if modification is needed**, user can **click the window-like buttons** to check the detection result. , **click "localize"** to determine the ground truth and **click "save"** to commit the changes.
+4. **Clicking "Classify" button** to start the feature extraction and classification process. After the classification process completed, the current tab widget shows the image with enhanced edges.
 
-1. If everything is okay, **click "Export Report"** button, then an excel file will be exported to the given path.
+5. If users have ground truth mask in the [demoGT](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/demo_io/demoGT) and the images are named including the true label (the number after second "-" indicates the JNET type), **"Evaluate" button can be clicked** to show the segmentation and classification results. The current tab widget shows the overlay mask image.
+
+6. By **Clicking "Export Result" button**, users can choose to export classification results and segmented mask.
 
 - # For Developer: evaluation
 
