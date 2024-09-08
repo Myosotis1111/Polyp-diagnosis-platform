@@ -4,7 +4,7 @@
 
 1. After the project is successfully imported and the environment is established (see [instructions](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main)) **and run main.py**.
 
-2. upload images by **clicking "Upload Images"** button with corresponding window location text files. Sample images can be found in [demo_io](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/demo_io/demoImg). After successfully uploaded, the polyp image will be shown in the current tab widget.
+2. upload images by **clicking "Upload Images"** button with corresponding window location text files. Sample images can be found in [demo_io/demoImg](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/demo_io/demoImg). After successfully uploaded, the polyp image will be shown in the current tab widget.
 
 3. **Clicking "Segment" button** to start the segmentation process. After the segmentation process completed, the current tab widget shows the masked image. 
 
@@ -14,43 +14,27 @@
 
 6. By **Clicking "Export Result" button**, users can choose to export classification results and segmented mask.
 
-- # For Developer: evaluation
+- # Usecase 2: Batch processing of multiple polyp images
 
-1. **Select [evaluation.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/evaluation.py)**, configure the folder_path to the path of tested data (default: testset) . parameters like confidence threshold and NMS IOU threshold can be also set here. **Run [evaluation.py](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/evaluation.py)** after setting.
+1. When running the platform, **Click "Batch Processing" button**, the platform will start processing polyp images in [batch_io/batch_input](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/batch_io/batch_input). The segmented masks will be saved in the results folder. Also, an excel file including feature values and classification outcome for each polyp image will also be exported.
 
-2. The test report will then be provided under [evaluation](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/evaluation) folder in the form of excel file.
-
-- # For Developer: release executable version
-
-1. If an executable version is needed for users to use the platform without python. First make sure that cx_Freeze is installed, if not, open the command line to execute:
-
-    `pip install cx_Freeze`
-
-2. After successfully installed cx_Freeze, change the directory to the python project and execute:
-
-    `python setup.py build`
-
-    Then a folder named "build" containing executable file is established.
 # 2. Description of files
 
 - # Folders
 
-1. [evaluation](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/evaluation): stores the images and result excel file obtained during the evaluation process (via running evaluation.py)
+1. [batch_io](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/batch_io): stores the inputs and outputs for batch processing (Usecase 2).
 
-1. [images](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/images): stores the images obtained during the detection process (via running main.py).
+2. [classifier training](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/classifier%20training): contains the python script to train the classifier.
 
-1. [testset](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/testset): contains all original images in the dataset. Users can try these images for testing the platform.
+3. [demo_io](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/demo_io): stores the inputs and outputs for demonstration of the platform function.
 
-1. [utils](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/utils)/[model](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/model): these folders contain yolov5 related codes.
+4. [feature_data_for_cls](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/feature_data_for_cls): stores the training data and test data in excel formats for the training of the classificaiton model.
 
-1. [weights](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/weights): contains weights of the detection model. There are several models for choice:
+5. [utils](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/utils)/[lib](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/lib)/[pretrained_pth](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/pretrained_pth): these folders contain Polyp-PVT related codes. Detailed information can be refer to [link](https://github.com/DengPingFan/Polyp-PVT).
 
+6. [model_weight_path](https://github.com/Myosotis1111/Polyp-diagnosis-platform/tree/main/Diagnosis_Platform/model_weight_path): contains weights of the segmentation and classification model. There are several classification models for choice.
 
-    - classic yolo: default yolov5 model trained with CIoU and data augmentation.
-    - simAM: yolov5 model with Focal-EIoU, SimAM attention module and data augmentation.
-    - simAM_lite: yolov5 model with Focal-EIoU, SimAM attention module, but without data augmentation.
-
-    **the default model is simAM. If users want to change the model, copy the best.pt in the desired folder and replace the best.pt in the root path of weights folder.**
+    **The default classification model is SVM+SFBS.**
 
 - # Python files
 
