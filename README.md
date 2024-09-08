@@ -8,7 +8,7 @@
 
 Final version of the complete thesis uploaded.
                
-![Software GUI](software_screenshot.png)
+![Software GUI](GUI.png)
 
 # Python project：
 
