@@ -30,10 +30,4 @@ This will create a new Conda environment using the configuration in the environm
 
 # NBI Dataset
 
-The dataset used in this master thesis contains 1211 NBI images for training and 120 for testing. The collection and annotation are under the instructions of colonoscopists from the Fourth People's Hospital, Shanghai, China.
-
-**(1)** To install it, unzip the zip file to any path except desktop (unknown error may occur). 
-
-**(2)** To run it, run the .exe file in the folder "rs detection platform ver1.2".
-
-**Note:** Folder "testset" contains images as samples to upload and detect.
+The dataset used in this master thesis contains 1211 annotated NBI images and their corresponding masks for training and 120 for testing. The collection and annotation are under the instructions of colonoscopists from the Fourth People's Hospital, Shanghai, China.
