@@ -1,4 +1,4 @@
-# Enhancing Medical Diagnosis using Deep-learning based Image Segmentation
+# Enhancing Medical Diagnosis with Deep-learning based Image Segmentation
 
 # Author：Yang Xinchen
 
